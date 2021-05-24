@@ -105,7 +105,7 @@ export const getIsValidOnNameTag = () => {
 const stringToConvert = "14.45";
 
 export const convertStringToNumber = () => {
-  // Write your code here
+  return parseFloat(stringToConvert);
 };
 
 /**
@@ -119,7 +119,11 @@ export const convertStringToNumber = () => {
 const stringWithUppercaseLetters = "I Am A String With Uppercase Letters";
 
 export const getHasUppercaseLetters = () => {
-  // Write your code here
+  const isUpperCase = /([A-Z])/;
+
+  if (isUpperCase.test(stringWithUppercaseLetters)) {
+    return true;
+  }
 };
 
 /* Expert Challenge */
@@ -133,5 +137,10 @@ export const getHasUppercaseLetters = () => {
 const pascalCaseVariableName = "IWantToBeSnakeCase";
 
 export const convertPascalCaseToSnakeCase = () => {
-  // Write your code here
+  const snakeCase = pascalCaseVariableName
+    .split(/(?=[A-Z])/)
+    .join("_")
+    .toLowerCase();
+
+  return snakeCase;
 };
