@@ -13,7 +13,7 @@
  * A function that concatenates two strings together with a space in between them.
  *
  * @param {string} firstName John
- * @param {string} lastName Smith
+ * @param {string} lastName Smithw
  * @returns {string} John Smith
  */
 export const createFullName = (firstName, lastName) => {
