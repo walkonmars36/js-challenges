@@ -90,9 +90,10 @@ export const findType = () => {
 const nameTagOption = "Timothy";
 
 export const getIsValidOnNameTag = () => {
-  // Write your code here
+  if (nameTagOption.length <= 8 && nameTagOption.charAt(0).toUpperCase()) {
+    return true;
+  }
 };
-
 /* Advanced Challenges */
 
 /**
