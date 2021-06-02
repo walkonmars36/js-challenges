@@ -22,7 +22,7 @@
  */
 
 export const createRecipeString = (ingredientsArr) => {
-  return;
+  return ingredientsArr.join("+");
 };
 
 /**
@@ -33,7 +33,9 @@ export const createRecipeString = (ingredientsArr) => {
  */
 
 export const getFirstAndLastItems = (itemsArr) => {
-  return;
+  let newArray = [];
+  newArray.push(itemsArr[0], itemsArr[itemsArr.length - 1]);
+  return newArray;
 };
 
 /**
@@ -44,7 +46,13 @@ export const getFirstAndLastItems = (itemsArr) => {
  */
 
 export const totalScores = (scoreArr) => {
-  return;
+  let scoreTotal = 0;
+
+  for (let i = 0; i < scoreArr.length; i++) {
+    scoreTotal += scoreArr[i];
+  }
+
+  return scoreTotal;
 };
 
 /**
@@ -60,7 +68,12 @@ export const totalScores = (scoreArr) => {
  */
 
 export const totalRange = (rangeMax) => {
-  return;
+  let totalRange = [Array.from(rangeMax)];
+
+  let sum = totalRange.reduce(function (a, b) {
+    return a + b;
+  }, 0);
+  return sum;
 };
 
 /**
