@@ -13,6 +13,10 @@
  * Foundation Challenges
  */
 
+// MAP -> CREATES NEW ARRAY -> FUNCTION APPLIED TO EACH ITEM IN THE ARRAY
+// FILTER -> ALSO NEW ARRAY -> EACH ITEM HAS TO PASS A CONDITION
+// FOREACH -> READ ONLY -> GIVES YOU ACCESS TO EACH ITEM IN THE ARRAY
+
 /**
  * A function that takes an array of Booleans and then removes the false values from the given array.
  * It should create a new array only consiting of the true values.

@@ -67,13 +67,13 @@ export const totalScores = (scoreArr) => {
  * @return {number} 55
  */
 
+// I couldn't solve this and have copied in the solution to learn from it, as I thought I'd need to create an array from rangeMax (it fried my brain!). The answer is so simple and elegant.
 export const totalRange = (rangeMax) => {
-  let totalRange = [Array.from(rangeMax)];
-
-  let sum = totalRange.reduce(function (a, b) {
-    return a + b;
-  }, 0);
-  return sum;
+  let total = 0;
+  for (let i = 0; i <= rangeMax; i++) {
+    total += i;
+  }
+  return total;
 };
 
 /**
