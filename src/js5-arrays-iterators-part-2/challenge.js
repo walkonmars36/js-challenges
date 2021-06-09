@@ -9,6 +9,9 @@
   share it with the group!
 */
 
+// Charlie's Hints
+// Array Methods / Iterators -> REDUCE(), JOIN(), SORT(), INDEXOF() AND REVERSE()
+
 /**
  * Foundation Challenges
  */
@@ -22,7 +25,11 @@
  */
 
 export const totalScoresArr = (scoresArr) => {
-  return;
+  const totalScores = scoresArr.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+  }, 0);
+
+  return totalScores;
 };
 
 /**
@@ -35,7 +42,7 @@ export const totalScoresArr = (scoresArr) => {
  */
 
 export const reverseString = (toReverse) => {
-  return;
+  return toReverse.split("").reverse().join("");
 };
 
 /**
@@ -48,7 +55,11 @@ export const reverseString = (toReverse) => {
  */
 
 export const sortCharactersAlphabetically = (charcterArr) => {
-  return;
+  const lowerCase = charcterArr.map((charcterArr) => charcterArr.toLowerCase());
+
+  const sorted = lowerCase.sort();
+
+  return sorted;
 };
 
 /**
@@ -63,7 +74,8 @@ export const sortCharactersAlphabetically = (charcterArr) => {
  */
 
 export const sortNumbersHighToLow = (numberArr) => {
-  return;
+  let sorted = numberArr.sort((a, b) => b - a);
+  return sorted;
 };
 
 /**

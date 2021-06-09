@@ -67,7 +67,7 @@ export const totalScores = (scoreArr) => {
  * @return {number} 55
  */
 
-// I couldn't solve this and have copied in the solution to learn from it, as I thought I'd need to create an array from rangeMax (it fried my brain!). The answer is so simple and elegant.
+// I couldn't solve this and have copied in the solution to learn from it, as I thought I'd need to create an array of 0 -10 from rangeMax (it fried my brain!).
 export const totalRange = (rangeMax) => {
   let total = 0;
   for (let i = 0; i <= rangeMax; i++) {
@@ -84,7 +84,10 @@ export const totalRange = (rangeMax) => {
  */
 
 export const moveFirstAndLastItems = (itemsArr) => {
-  return;
+  const newItemsArr = [...itemsArr];
+
+  newItemsArr.unshift(newItemsArr.pop());
+  return newItemsArr;
 };
 
 /**
@@ -102,7 +105,17 @@ export const moveFirstAndLastItems = (itemsArr) => {
  */
 
 export const removeEvenNumbers = (numberArr) => {
-  return;
+  const cloneNumArr = [...numberArr];
+  const justOddNum = [];
+
+  for (let i = 0; i < cloneNumArr.length; i++) {
+    let tempArr = cloneNumArr[i];
+    if (tempArr % 2 !== 0) {
+      justOddNum.push(tempArr);
+    }
+  }
+
+  return justOddNum;
 };
 
 /**
