@@ -109,6 +109,7 @@ export const calculateLifetimeSupply = (snickersPerDay, age, maxAge) => {
  * @returns {string} A - F | Score unavailable
  */
 export const getGrade = (score) => {
+  // If statement from the solution
   if (score > 100 || score < 0 || typeof score !== "number") {
     return "Score unavailable";
   }

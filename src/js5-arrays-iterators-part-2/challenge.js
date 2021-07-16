@@ -93,20 +93,16 @@ export const sortNumbersHighToLow = (numberArr) => {
  */
 
 export const checkItemInstock = (toCheck) => {
-  const stockList = [
-    "apple",
-    "banana",
-    "orange",
-    "coconut",
-    "strawberry",
-    "lime",
-    "grapefruit",
-    "lemon",
-    "kumquat",
-    "blueberry",
-    "melon",
-  ];
-  return;
+  const stockList = ["apple", "banana", "orange", "coconut", "strawberry", "lime", "grapefruit", "lemon", "kumquat", "blueberry", "melon"];
+
+  // Charlie's solution
+  const index = stockList.indexOf(toCheck);
+  let message = `Sorry ${toCheck} is not instock.`;
+
+  if (index >= 0) {
+    message = `${toCheck} is instock, it is on aisle ${index}.`;
+  }
+  return message;
 };
 
 /**
