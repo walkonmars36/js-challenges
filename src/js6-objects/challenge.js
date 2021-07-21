@@ -22,10 +22,11 @@
  */
 export const getFurniturePrice = (furniture) => {
   /* Write code here */
+  return furniture.price;
 };
 
 /**
- * A function to attach to a store location to a furniture object from the catalogue
+ * A function to attach a store location to a furniture object from the catalogue
  *
  * @param {{name: string, price: number}} furniture - A piece of furniture from the catalogue
  * @param {string} location - A store location to attach to a piece of furniture
@@ -33,6 +34,8 @@ export const getFurniturePrice = (furniture) => {
  */
 export const setFurnitureStoreLocation = (furniture, location) => {
   /* Write code here */
+  furniture.location = location;
+  return furniture;
 };
 
 /**
@@ -47,6 +50,13 @@ export const setFurnitureStoreLocation = (furniture, location) => {
  */
 export const makeSpaceship = (name, noOfSeats, engineType, canTravelSolarSystems) => {
   /* Write code here */
+  const spaceship = {
+    name: name,
+    noOfSeats: noOfSeats,
+    engineType: engineType,
+    canTravelSolarSystems: canTravelSolarSystems,
+  };
+  return spaceship;
 };
 
 /* Intermediate Challenges */
