@@ -54,7 +54,7 @@ export const makeSpaceship = (name, noOfSeats, engineType, canTravelSolarSystems
     name: name,
     noOfSeats: noOfSeats,
     engineType: engineType,
-    canTravelSolarSystems: canTravelSolarSystems
+    canTravelSolarSystems: canTravelSolarSystems,
   };
 
   return spaceship;

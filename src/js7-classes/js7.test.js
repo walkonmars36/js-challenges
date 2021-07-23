@@ -1,6 +1,6 @@
 import * as challenge from "./challenge";
 
-const { Coordinate, Alert, Loader, Counter, Engine, Modal, BookShelf, BankAccount } = challenge;
+const {Coordinate, Alert, Loader, Counter, Engine, Modal, BookShelf, BankAccount} = challenge;
 
 /**
  * REMOVE X FROM xdescribe FUNCTION TO STOP SKIPPING TEST BLOCKS
@@ -36,7 +36,7 @@ describe("Testing Coordinate class", () => {
   });
 });
 
-xdescribe("Testing Alert class", () => {
+describe("Testing Alert class", () => {
   const logOutAlert = new Alert("Are you sure you want to log out?");
   const deleteAlert = new Alert("Are you sure you want to delete this content?");
 
@@ -76,8 +76,8 @@ xdescribe("Testing Alert class", () => {
   });
 });
 
-xdescribe("Testing Loader class", () => {
-  const htmlReference = { innerHTML: "" };
+describe("Testing Loader class", () => {
+  const htmlReference = {innerHTML: ""};
   const loader = new Loader(htmlReference);
 
   it("Should be an object", () => {
@@ -301,8 +301,8 @@ xdescribe("Testing Modal class", () => {
           } else {
             this.list.push(cssClass);
           }
-        }
-      }
+        },
+      },
     };
     modal = new Modal(htmlReference, "Error", "Sorry there has been some sort of error");
   });
@@ -376,12 +376,7 @@ xdescribe("Testing Modal class", () => {
 
 xdescribe("Testing BookShelf class", () => {
   let bookShelf;
-  const bookArray = [
-    "JavaScript: The Definitive Guide",
-    "JavaScript: The Good Parts",
-    "The Google story",
-    "React for Dummies"
-  ];
+  const bookArray = ["JavaScript: The Definitive Guide", "JavaScript: The Good Parts", "The Google story", "React for Dummies"];
 
   const newBookArray = bookArray.filter((book) => book.includes("JavaScript"));
 
