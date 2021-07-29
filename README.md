@@ -1,3 +1,5 @@
+👋🏻
+
 # \_nology JS challenges
 
 This is the repository for \_nology JavaScript challenges.
