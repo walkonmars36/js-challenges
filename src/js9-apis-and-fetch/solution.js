@@ -127,7 +127,7 @@ export const setDescriptions = (url) => {
     .then((response) => response.json())
     .then((people) => {
       const peopleWithDescriptions = people.map((person) => {
-        const newPerson = { ...person };
+        const newPerson = {...person};
         const interests = newPerson.interests.reduce((previous, current, index, arr) => {
           if (index === arr.length - 1) {
             return previous + ` and ${current}`;
@@ -140,9 +140,7 @@ export const setDescriptions = (url) => {
           return previous + `, ${current}`;
         }, "");
 
-        const description = `My name is ${newPerson.name}, I am ${newPerson.age} years old and ${
-          newPerson.height
-        }cm tall. I enjoy ${interests}. ${
+        const description = `My name is ${newPerson.name}, I am ${newPerson.age} years old and ${newPerson.height}cm tall. I enjoy ${interests}. ${
           newPerson.isEmployed ? "I am currently employed" : "I am not currently employed"
         }`;
 
@@ -208,7 +206,7 @@ export const setInterestDetails = (peopleUrl, interestsUrl) => {
         .then((response) => response.json())
         .then((interests) => {
           const peopleWithComplexInterets = people.map((person) => {
-            const newPerson = { ...person };
+            const newPerson = {...person};
 
             const newInterests = newPerson.interests.map((personsInterest) => {
               return interests.find((interest) => interest.interest === personsInterest);

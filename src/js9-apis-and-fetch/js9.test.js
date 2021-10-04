@@ -1,20 +1,12 @@
 import * as challenge from "./challenge";
 import people from "./mockPersonApi.json";
 
-const {
-  getData,
-  getNames,
-  getEmployedPeople,
-  findPersonWithId,
-  getPeopleWithMatchingInterests,
-  setDescriptions,
-  setInterestDetails
-} = challenge;
+const {getData, getNames, getEmployedPeople, findPersonWithId, getPeopleWithMatchingInterests, setDescriptions, setInterestDetails} = challenge;
 
 beforeEach(() => {
   const mockFetch = jest.fn().mockImplementation((args) =>
     Promise.resolve({
-      json: () => require(args)
+      json: () => require(args),
     })
   );
 
@@ -54,7 +46,7 @@ describe("getEmployedPeople() tests", () => {
       age: 47,
       height: 170,
       interests: ["swimming", "reading", "juggling"],
-      isEmployed: true
+      isEmployed: true,
     },
     {
       id: "004",
@@ -62,7 +54,7 @@ describe("getEmployedPeople() tests", () => {
       age: 32,
       height: 190,
       interests: ["shooting", "MMA", "writing"],
-      isEmployed: true
+      isEmployed: true,
     },
     {
       id: "005",
@@ -70,8 +62,8 @@ describe("getEmployedPeople() tests", () => {
       age: 22,
       height: 160,
       interests: ["swimming", "watching TV", "knitting"],
-      isEmployed: true
-    }
+      isEmployed: true,
+    },
   ];
 
   it("Fetch should have been called once", () => {
@@ -88,14 +80,14 @@ describe("getEmployedPeople() tests", () => {
   });
 });
 
-describe("findPersonWithId() tests", () => {
+xdescribe("findPersonWithId() tests", () => {
   const dummyId001 = {
     id: "001",
     name: "Peter",
     age: 47,
     height: 170,
     interests: ["swimming", "reading", "juggling"],
-    isEmployed: true
+    isEmployed: true,
   };
 
   const dummyId005 = {
@@ -104,7 +96,7 @@ describe("findPersonWithId() tests", () => {
     age: 22,
     height: 160,
     interests: ["swimming", "watching TV", "knitting"],
-    isEmployed: true
+    isEmployed: true,
   };
 
   it("Should return a single object", async () => {
@@ -129,7 +121,7 @@ describe("findPersonWithId() tests", () => {
   });
 });
 
-describe("getPeopleWithMatchingInterests() tests", () => {
+xdescribe("getPeopleWithMatchingInterests() tests", () => {
   const dummySwimming = [
     {
       id: "001",
@@ -137,7 +129,7 @@ describe("getPeopleWithMatchingInterests() tests", () => {
       age: 47,
       height: 170,
       interests: ["swimming", "reading", "juggling"],
-      isEmployed: true
+      isEmployed: true,
     },
     {
       id: "005",
@@ -145,8 +137,8 @@ describe("getPeopleWithMatchingInterests() tests", () => {
       age: 22,
       height: 160,
       interests: ["swimming", "watching TV", "knitting"],
-      isEmployed: true
-    }
+      isEmployed: true,
+    },
   ];
 
   const dummyMma = [
@@ -156,7 +148,7 @@ describe("getPeopleWithMatchingInterests() tests", () => {
       age: 78,
       height: 140,
       interests: ["knitting", "baking", "MMA"],
-      isEmployed: false
+      isEmployed: false,
     },
     {
       id: "004",
@@ -164,8 +156,8 @@ describe("getPeopleWithMatchingInterests() tests", () => {
       age: 32,
       height: 190,
       interests: ["shooting", "MMA", "writing"],
-      isEmployed: true
-    }
+      isEmployed: true,
+    },
   ];
 
   it("Should return an array if interests are found", async () => {
@@ -189,78 +181,71 @@ describe("getPeopleWithMatchingInterests() tests", () => {
   });
 });
 
-describe("setDescription() tests", () => {
+xdescribe("setDescription() tests", () => {
   const dummyDescriptions = [
     {
       age: 47,
-      description:
-        "My name is Peter, I am 47 years old and 170cm tall. I enjoy swimming, reading and juggling. I am currently employed",
+      description: "My name is Peter, I am 47 years old and 170cm tall. I enjoy swimming, reading and juggling. I am currently employed",
       height: 170,
       id: "001",
       interests: ["swimming", "reading", "juggling"],
       isEmployed: true,
-      name: "Peter"
+      name: "Peter",
     },
     {
       age: 16,
-      description:
-        "My name is Georgia, I am 16 years old and 130cm tall. I enjoy writing, hiking and watching TV. I am not currently employed",
+      description: "My name is Georgia, I am 16 years old and 130cm tall. I enjoy writing, hiking and watching TV. I am not currently employed",
       height: 130,
       id: "002",
       interests: ["writing", "hiking", "watching TV"],
       isEmployed: false,
-      name: "Georgia"
+      name: "Georgia",
     },
     {
       age: 78,
-      description:
-        "My name is Joanna, I am 78 years old and 140cm tall. I enjoy knitting, baking and MMA. I am not currently employed",
+      description: "My name is Joanna, I am 78 years old and 140cm tall. I enjoy knitting, baking and MMA. I am not currently employed",
       height: 140,
       id: "003",
       interests: ["knitting", "baking", "MMA"],
       isEmployed: false,
-      name: "Joanna"
+      name: "Joanna",
     },
     {
       age: 32,
-      description:
-        "My name is Buzz, I am 32 years old and 190cm tall. I enjoy shooting, MMA and writing. I am currently employed",
+      description: "My name is Buzz, I am 32 years old and 190cm tall. I enjoy shooting, MMA and writing. I am currently employed",
       height: 190,
       id: "004",
       interests: ["shooting", "MMA", "writing"],
       isEmployed: true,
-      name: "Buzz"
+      name: "Buzz",
     },
     {
       age: 22,
-      description:
-        "My name is Travis, I am 22 years old and 160cm tall. I enjoy swimming, watching TV and knitting. I am currently employed",
+      description: "My name is Travis, I am 22 years old and 160cm tall. I enjoy swimming, watching TV and knitting. I am currently employed",
       height: 160,
       id: "005",
       interests: ["swimming", "watching TV", "knitting"],
       isEmployed: true,
-      name: "Travis"
+      name: "Travis",
     },
     {
       age: 27,
-      description:
-        "My name is Paula, I am 27 years old and 160cm tall. I enjoy baking, hiking and shooting. I am not currently employed",
+      description: "My name is Paula, I am 27 years old and 160cm tall. I enjoy baking, hiking and shooting. I am not currently employed",
       height: 160,
       id: "006",
       interests: ["baking", "hiking", "shooting"],
       isEmployed: false,
-      name: "Paula"
+      name: "Paula",
     },
     {
       age: 50,
-      description:
-        "My name is J, I am 50 years old and 150cm tall. I enjoy reading, juggling and knitting. I am not currently employed",
+      description: "My name is J, I am 50 years old and 150cm tall. I enjoy reading, juggling and knitting. I am not currently employed",
       height: 150,
       id: "007",
       interests: ["reading", "juggling", "knitting"],
       isEmployed: false,
-      name: "J"
-    }
+      name: "J",
+    },
   ];
 
   it("Should not modify original data", async () => {
@@ -279,7 +264,7 @@ describe("setDescription() tests", () => {
   });
 });
 
-describe("setInterestDetails() tests", () => {
+xdescribe("setInterestDetails() tests", () => {
   const dummyDetailedInterests = [
     {
       age: 47,
@@ -290,23 +275,23 @@ describe("setInterestDetails() tests", () => {
           costPerAnnum: 800,
           interest: "swimming",
           isDoneInGroups: false,
-          sizeOfCommunity: 20000000
+          sizeOfCommunity: 20000000,
         },
         {
           costPerAnnum: 500,
           interest: "reading",
           isDoneInGroups: false,
-          sizeOfCommunity: 30000000
+          sizeOfCommunity: 30000000,
         },
         {
           costPerAnnum: 100,
           interest: "juggling",
           isDoneInGroups: false,
-          sizeOfCommunity: 1000000
-        }
+          sizeOfCommunity: 1000000,
+        },
       ],
       isEmployed: true,
-      name: "Peter"
+      name: "Peter",
     },
     {
       age: 16,
@@ -317,23 +302,23 @@ describe("setInterestDetails() tests", () => {
           costPerAnnum: 200,
           interest: "writing",
           isDoneInGroups: false,
-          sizeOfCommunity: 15000000
+          sizeOfCommunity: 15000000,
         },
         {
           costPerAnnum: 1000,
           interest: "hiking",
           isDoneInGroups: true,
-          sizeOfCommunity: 25000000
+          sizeOfCommunity: 25000000,
         },
         {
           costPerAnnum: 200,
           interest: "watching TV",
           isDoneInGroups: true,
-          sizeOfCommunity: 450000000
-        }
+          sizeOfCommunity: 450000000,
+        },
       ],
       isEmployed: false,
-      name: "Georgia"
+      name: "Georgia",
     },
     {
       age: 78,
@@ -344,23 +329,23 @@ describe("setInterestDetails() tests", () => {
           costPerAnnum: 400,
           interest: "knitting",
           isDoneInGroups: false,
-          sizeOfCommunity: 10000000
+          sizeOfCommunity: 10000000,
         },
         {
           costPerAnnum: 400,
           interest: "baking",
           isDoneInGroups: false,
-          sizeOfCommunity: 20000000
+          sizeOfCommunity: 20000000,
         },
         {
           costPerAnnum: 1000,
           interest: "MMA",
           isDoneInGroups: true,
-          sizeOfCommunity: 20000000
-        }
+          sizeOfCommunity: 20000000,
+        },
       ],
       isEmployed: false,
-      name: "Joanna"
+      name: "Joanna",
     },
     {
       age: 32,
@@ -371,23 +356,23 @@ describe("setInterestDetails() tests", () => {
           costPerAnnum: 10000,
           interest: "shooting",
           isDoneInGroups: true,
-          sizeOfCommunity: 5000000
+          sizeOfCommunity: 5000000,
         },
         {
           costPerAnnum: 1000,
           interest: "MMA",
           isDoneInGroups: true,
-          sizeOfCommunity: 20000000
+          sizeOfCommunity: 20000000,
         },
         {
           costPerAnnum: 200,
           interest: "writing",
           isDoneInGroups: false,
-          sizeOfCommunity: 15000000
-        }
+          sizeOfCommunity: 15000000,
+        },
       ],
       isEmployed: true,
-      name: "Buzz"
+      name: "Buzz",
     },
     {
       age: 22,
@@ -398,23 +383,23 @@ describe("setInterestDetails() tests", () => {
           costPerAnnum: 800,
           interest: "swimming",
           isDoneInGroups: false,
-          sizeOfCommunity: 20000000
+          sizeOfCommunity: 20000000,
         },
         {
           costPerAnnum: 200,
           interest: "watching TV",
           isDoneInGroups: true,
-          sizeOfCommunity: 450000000
+          sizeOfCommunity: 450000000,
         },
         {
           costPerAnnum: 400,
           interest: "knitting",
           isDoneInGroups: false,
-          sizeOfCommunity: 10000000
-        }
+          sizeOfCommunity: 10000000,
+        },
       ],
       isEmployed: true,
-      name: "Travis"
+      name: "Travis",
     },
     {
       age: 27,
@@ -425,23 +410,23 @@ describe("setInterestDetails() tests", () => {
           costPerAnnum: 400,
           interest: "baking",
           isDoneInGroups: false,
-          sizeOfCommunity: 20000000
+          sizeOfCommunity: 20000000,
         },
         {
           costPerAnnum: 1000,
           interest: "hiking",
           isDoneInGroups: true,
-          sizeOfCommunity: 25000000
+          sizeOfCommunity: 25000000,
         },
         {
           costPerAnnum: 10000,
           interest: "shooting",
           isDoneInGroups: true,
-          sizeOfCommunity: 5000000
-        }
+          sizeOfCommunity: 5000000,
+        },
       ],
       isEmployed: false,
-      name: "Paula"
+      name: "Paula",
     },
     {
       age: 50,
@@ -452,24 +437,24 @@ describe("setInterestDetails() tests", () => {
           costPerAnnum: 500,
           interest: "reading",
           isDoneInGroups: false,
-          sizeOfCommunity: 30000000
+          sizeOfCommunity: 30000000,
         },
         {
           costPerAnnum: 100,
           interest: "juggling",
           isDoneInGroups: false,
-          sizeOfCommunity: 1000000
+          sizeOfCommunity: 1000000,
         },
         {
           costPerAnnum: 400,
           interest: "knitting",
           isDoneInGroups: false,
-          sizeOfCommunity: 10000000
-        }
+          sizeOfCommunity: 10000000,
+        },
       ],
       isEmployed: false,
-      name: "J"
-    }
+      name: "J",
+    },
   ];
 
   it("should call fetch twice", async () => {
