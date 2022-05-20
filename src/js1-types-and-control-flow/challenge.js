@@ -19,7 +19,7 @@ const firstName = "John";
 const lastName = "Smith";
 
 export const createFullName = () => {
-  return firstName + " " + lastName;
+  return `${firstName} ${lastName}`;
 };
 
 /**

@@ -1,7 +1,6 @@
 import * as challenge from "./challenge";
 
-const {totalScoresArr, reverseString, sortCharactersAlphabetically, sortNumbersHighToLow, checkItemInstock, checkPrimaryColours, checkStringPalindrome, totalNestedScoresArr, encryptString} =
-  challenge;
+const {totalScoresArr, reverseString, sortCharactersAlphabetically, sortNumbersHighToLow, checkItemInstock, checkPrimaryColours, checkStringPalindrome, totalNestedScoresArr, encryptString} = challenge;
 
 /**
  * REMOVE X FROM DESCRIBE FUNCTION TO STOP SKIPPING TEST BLOCKS
@@ -148,7 +147,7 @@ describe("Testing checkItemInstock()", () => {
   });
 });
 
-xdescribe("Testing checkPrimaryColours()", () => {
+describe("Testing checkPrimaryColours()", () => {
   const rainbowColours = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
   const primaryColours = ["red", "yellow", "blue"];
 

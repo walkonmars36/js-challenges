@@ -54,7 +54,7 @@ export const createPercentageList = (numbersArr) => {
  */
 
 export const createListOfPoessessions = (possessionsArr, name) => {
-  let updatedList = possessionsArr.map((item) => name + " " + item);
+  const updatedList = possessionsArr.map((item) => `${name} ${item}`);
 
   return updatedList;
 };
@@ -80,9 +80,7 @@ export const createListOfPoessessions = (possessionsArr, name) => {
  * @return {number[]} [1, 2, 3, 4, 5]
  */
 
-export const convertStringToNumbersArray = (numberString) => {
-  return;
-};
+export const convertStringToNumbersArray = (numberString) => numberString.split("+").map((item) => parseInt(item));
 
 /**
  * A function that takes a string of numbers joined with a "+" and creates a new array based on if the number is even or odd.
@@ -93,7 +91,15 @@ export const convertStringToNumbersArray = (numberString) => {
  */
 
 export const createOddEvenArray = (numberString) => {
-  return;
+  const oddEvenArray = numberString.split("+").map((item) => {
+    if (item % 2 === 0) {
+      return "even";
+    } else {
+      return "odd";
+    }
+  });
+
+  return oddEvenArray;
 };
 
 /**
@@ -106,7 +112,7 @@ export const createOddEvenArray = (numberString) => {
  */
 
 export const filterBooksBySearch = (booksArr, searchTerm) => {
-  return;
+  return booksArr.filter((book) => book.indexOf(searchTerm) !== -1);
 };
 
 /**
@@ -126,12 +132,10 @@ export const filterBooksBySearch = (booksArr, searchTerm) => {
  */
 
 export const formatStringArray = (stringArr) => {
-  const cleanedArr = stringArr.forEach((string) => {
+  const cleanedArr = stringArr.map((string) => {
     const cleanStr = string.trim().toLowerCase();
     return cleanStr;
   });
-
-  // console.log(???)
 
   const joinedString = cleanedArr.join("+");
 

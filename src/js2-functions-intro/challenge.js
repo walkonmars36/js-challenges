@@ -16,9 +16,7 @@
  * @param {string} lastName Smithw
  * @returns {string} John Smith
  */
-export const createFullName = (firstName, lastName) => {
-  return `${firstName} ${lastName}`;
-};
+export const createFullName = (firstName, lastName) => `${firstName} ${lastName}`;
 
 /**
  * A function that takes two numbers as an input and returns the smallest one.
@@ -28,9 +26,7 @@ export const createFullName = (firstName, lastName) => {
  * @param {number} number2 200
  * @returns {number} 100
  */
-export const findSmallestNumber = (number1, number2) => {
-  return Math.min(number1, number2);
-};
+export const findSmallestNumber = (number1, number2) => Math.min(number1, number2);
 
 /**
  * A function that takes two numbers as input, multiplies them together and returns the product.
@@ -40,9 +36,7 @@ export const findSmallestNumber = (number1, number2) => {
  * @param {number} number2 6
  * @returns {number} 18
  */
-export const multiplyNumbers = (number1, number2) => {
-  return number1 * number2;
-};
+export const multiplyNumbers = (number1, number2) => number1 * number2;
 
 /* Intermediate Challenges */
 
@@ -109,7 +103,6 @@ export const calculateLifetimeSupply = (snickersPerDay, age, maxAge) => {
  * @returns {string} A - F | Score unavailable
  */
 export const getGrade = (score) => {
-  // If statement from the solution
   if (score > 100 || score < 0 || typeof score !== "number") {
     return "Score unavailable";
   }
@@ -136,9 +129,10 @@ export const getGrade = (score) => {
  * @returns {number} 28.27
  */
 export const calculateAreaOfCirlce = (radius) => {
-  let area = Math.PI * radius * radius;
-  area = Math.round((area + Number.EPSILON) * 100) / 100;
-  return area;
+  const area = (Math.PI * radius * radius).toFixed(2);
+  const strToNumber = parseFloat(area);
+
+  return strToNumber;
 };
 
 /* Expert Challenge */
@@ -160,4 +154,38 @@ export const calculateAreaOfCirlce = (radius) => {
  */
 export const getStudentSummary = (score, name) => {
   /* Write your code here */
+  let message;
+
+  switch (true) {
+    case score > 100 || score < 0 || typeof score !== "number":
+      message = `My apologies ${name}, there's been an error in processing your grade.`;
+      break;
+
+    case score <= 100 && score >= 80:
+      message = `Congratulations ${name}! You achieved a grade of A.`;
+      break;
+    case score <= 79 && score >= 70:
+      message = `Well done ${name}! You achieved a grade of B.`;
+      break;
+
+    case score <= 69 && score >= 60:
+      message = `Nicely done ${name}! You achieved a grade of C.`;
+      break;
+
+    case score <= 59 && score >= 50:
+      message = `That's okay ${name}. You achieved a grade of D.`;
+      break;
+
+    case score <= 49 && score >= 40:
+      message = `Too bad ${name}. You achieved a grade of E.`;
+      break;
+    case score <= 39 && score >= 0:
+      message = `Sorry ${name}. You achieved a grade of F. There's always next year.`;
+      break;
+
+    default:
+      message = "Not a valid input";
+  }
+
+  return message;
 };

@@ -67,7 +67,6 @@ export const totalScores = (scoreArr) => {
  * @return {number} 55
  */
 
-// I couldn't solve this and have copied in the solution to learn from it, as I thought I'd need to create an array of 0 -10 from rangeMax (it fried my brain!).
 export const totalRange = (rangeMax) => {
   let total = 0;
   for (let i = 0; i <= rangeMax; i++) {
@@ -131,7 +130,18 @@ export const removeEvenNumbers = (numberArr) => {
  */
 
 export const generateAverage = (numberArr) => {
-  return;
+  const cloneArray = [...numberArr];
+  let result = 0;
+
+  if (cloneArray.length > 0) {
+    for (let i = 0; i < cloneArray.length; i++) {
+      result += cloneArray[i];
+    }
+
+    result = Math.ceil(result / cloneArray.length);
+  }
+
+  return result;
 };
 
 /**
@@ -142,7 +152,13 @@ export const generateAverage = (numberArr) => {
  */
 
 export const reverseOrder = (toReverseArr) => {
-  return;
+  const newArray = [...toReverseArr];
+  const reversedArray = [];
+  for (let i = newArray.length - 1; i >= 0; i--) {
+    reversedArray.push(newArray[i]);
+  }
+
+  return reversedArray;
 };
 
 /**
